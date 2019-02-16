@@ -127,5 +127,21 @@ class ReserverTest extends FunSuite with Matchers {
     hotel shouldEqual Lakewood
   }
 
+  test("Reward Customer should get Rigdwood for weekends") {
+    val hotel = Reserver().book(BookingRequest((6, 7), RewardCustomer))
+    hotel shouldEqual Ridgewood
+  }
+
+  /*test("Customer should get hotel with highest rating if Bill is same") {
+    val bookingRequest = BookingRequest((5, 6), RewardCustomer)
+
+    //Asserting booking prices are same
+    Reserver()
+      .bookingPriceOf(Lakewood, bookingRequest) shouldEqual Reserver()
+      .bookingPriceOf(Bridgewood, bookingRequest)
+
+    //Asserting hotel is return based on ratings
+    Reserver().book(bookingRequest) shouldEqual Bridgewood
+  }*/
 
 }
